@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 
 const filterData = [
@@ -72,7 +74,7 @@ const Header = ({ category, setCategory,search,setSearch }) => {
 
   return (<>
   
-    <header className="py-3 border-b bg-white sticky top-0 z-50 shadow-sm">
+    <header className="py-3 sticky top-0 z-50 shadow-sm">
       {/* Top Row: Logo, Title, and Search */}
       {/* <div className='text-center'>
     Made by <a href='https://digitalpaaji.com' target='_blank'>Digital paaji</a>  ·  AI Consultant
@@ -81,7 +83,7 @@ const Header = ({ category, setCategory,search,setSearch }) => {
         
         {/* Logo & Title - Hides text on very small screens if searching to save space */}
         <div className={`flex items-center gap-3 ${showsearch ? 'hidden sm:flex' : 'flex'}`}>
-          <img src="/logo.webp" alt="Logo" className="h-10 object-contain cursor-pointer" />
+          <img src="/logo.webp" alt="Logo" className="h-8 object-contain cursor-pointer" />
           <div className="cursor-pointer">
             <h1 className="font-semibold text-lg leading-tight text-gray-800">BNI Divine</h1>
             <p className="text-xs sm:text-sm text-gray-500">Member Directory · Patiala Chapter</p>
