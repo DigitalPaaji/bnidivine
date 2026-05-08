@@ -96,8 +96,8 @@ const Header = ({ category, setCategory, search, setSearch }) => {
         >
           Digital Paaji
         </a>{" "}
-        <span className="hidden sm:inline">·</span>{" "}
-        <span className="block sm:inline mt-0.5 sm:mt-0 text-gray-300">
+        <span className=" ">·</span>{" "}
+        <span className="text-gray-300">
           Digital Marketing Agency
         </span>
       </div>
@@ -109,11 +109,15 @@ const Header = ({ category, setCategory, search, setSearch }) => {
         <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 gap-4">
           
           {/* Logo & Title */}
-          <div className={`items-center gap-3 transition-opacity duration-300 ${showsearch ? 'hidden sm:flex opacity-50' : 'flex opacity-100'}`}>
-            <img src="/logo.webp" alt="Logo" className="h-7 lg:h-10 object-contain cursor-pointer drop-shadow-sm" />
-            <div className="cursor-pointer">
-              <h1 className="font-extrabold text-xl leading-tight text-gray-900 tracking-tight">BNI Divine</h1>
-              <p className="text-xs font-medium text-gray-500">Patiala Chapter</p>
+          <div className={`items-start gap-3 transition-opacity duration-300 ${showsearch ? 'hidden sm:flex opacity-50' : 'flex opacity-100'}`}>
+            <div>
+                <img src="/logo.webp" alt="Logo" className="h-7 lg:h-10 object-contain cursor-pointer drop-shadow-sm" />
+              <h1 className="font-semibold text-center leading-tight text-gray-900 tracking-tight">PATIALA</h1>
+        
+              </div>
+                <div className="cursor-pointer">
+              <h1 className="font-extrabold text-2xl border-l-2 pl-2 leading-tight text-gray-900 tracking-tight ">DIVINE</h1>
+              {/* <p className="text-xs font-medium text-gray-500">Patiala Chapter</p> */}
             </div>
           </div>
 
