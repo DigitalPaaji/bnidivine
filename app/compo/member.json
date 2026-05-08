@@ -7,13 +7,8 @@
     { "id": 6, "name": "Sayam Jain", "img" :"Sayam-Jain.webp",  "business": "JAIN PLYWOOD", "category": "Retailer - Plywood", "mobile": "9501031032", "address": "Timber Market, Rajpura-140 401, Patiala" },
     { "id": 7, "name": "Amrit Singh", "img" :"Amrit-Singh.webp",  "business": "DHERA SINGH JEWELLERS", "category": "Jewellers", "mobile": "9876504129", "address": "Adalat Bazar, Patiala" },
     { "id": 8, "name": "Tarun Singla", "img" :"Tarun-Singla.webp",  "business": "DELUXE FURNITURE", "category": "Furniture", "mobile": "9815111162", "address": "Nabha Gate, Patiala" },
-    { "id": 9, "name": "Rishi Raj Singh", "img" :"Rishi-Raj-Singh.webp",  "business": "DIGITAL PAAJI", "category": "Digital Marketing", "mobile": "9888401666", "address": "78, Kissan Market, 2nd Floor, Sirhind Road, Nr Hemkunt Petrol Pump, Patiala" },
+    { "id": 9, "name": "Rishi Raj Singh", "img" :"Rishi-Raj-Singh.webp",  "business": "DIGITAL PAAJI", "category": "Digital Marketing", "mobile": "9888401666", "address": "78, Kissan Market, 2nd Floor, Sirhind Road, Nr Hemkunt Petrol Pump, Patiala","Presentations":"https://www.youtube.com/embed/sQB8aZIg2_k" },
     { "id": 10, "name": "Kashish Jindal", "img" :"Kashish-Jindal.webp",  "business": "JINDAL INSURANCE ADVISOR", "category": "Insurance", "mobile": "9855817909", "address": "Urban Estate, Phase-2,  Patiala" },
-
-
-
-
-
 
     { "id": 11, "name": "Rishabh Goyal", "img" :"Rishabh-Goyal.webp",  "business": "NEXBRIDGE FINSERV", "category": "Financial Services", "mobile": "9988898488", "address": "36-D, Model Town, Patiala" },
     { "id": 13, "name": "Ravinder Goyal", "img" :"Ravinder-Goyal.webp",  "business": "MNH INDUSTRIES", "category": "PVC Panels", "mobile": "9814700336", "address": "108, Puda Enclave 1, Jail Road, Civil Lines,  Patiala" },
@@ -66,7 +61,7 @@
     { "id": 42, "name": "Ajay Bansal", "img" :"Ajay-Bansal.webp",  "business": "AJTECH GRAFIX", "category": "Printing", "mobile": "9814830175", "address": "Near 1st Gol Chakkar, Factory Area, Patiala" },
     { "id": 43, "name": "Sukhjiv Singh Sodhi", "img" :"Sukhjiv-Singh-Sodhi.webp",  "business": "PEST STRIKERS INDIA", "category": "Pest Control", "mobile": "9815078512", "address": "3618/2, Sirhindi Bazar, Patiala" },
     { "id": 44, "name": "Inderpreet Singh", "img" :"Inderpreet-Singh.webp",  "business": "AJIT ELECTRICAL CO.", "category": "Electrical", "mobile": "9256005005", "address": "Regd. Off.: #01, Gaushalla Road, Pta Mfg.  Unit : Sanaur Rd, Nr PEPSU Intl. Sch., Patiala" },
-    { "id": 41, "name": "Suvneet Ahuja", "img" :"Suvneet-Ahuja.webp",  "business": "ELECTRONICA FIRE SERVICE", "category": "Fire Safety", "mobile": "9356303540", "address": "Plot No. 10, St. No. 1, Arsh Nagar, Alipur, Patiala" },
+    { "id": 41, "name": "Suvneet Ahuja", "img" :"Suvneet-Ahuja.webp",  "business": "ELECTRONICA FIRE SERVICE", "category": "Fire Safety", "mobile": "9356303540", "address": "Plot No. 10, St. No. 1, Arsh Nagar, Alipur, Patiala","Presentations":"https://www.youtube.com/embed/XszgFnVc2uE" },
     
     { "id": 45, "name": "Naresh Kumar", "img" :"Naresh-Kumar.webp",  "business": "CHARMS COLLECTIONS", "category": "Clothing", "mobile": "9417223789", "address": "Dharampura Bazar & 22 No. Phatak Road, Patiala" },
     { "id": 46, "name": "Pawan Preet Singh", "img" :"Pawan-Preet-Singh.webp",  "business": "PREET DEPARTMENTAL STORE", "category": "Grocery", "mobile": "8847032676", "address": "Ragho Majra, Patiala" },
@@ -86,6 +81,6 @@
     { "id": 61, "name": "Samir Pandhi","img":"Samir-Pandhi.webp",  "business": "SPRINGLES EDUTECH", "category": "Education", "mobile": "9356664999", "address": "10-A, Model Town, Patiala" },
     { "id": 62, "name": "Harminder Singh Chugh","img":"Harminder-Singh-Chugh.webp",  "business": "ME AND MOMS", "category": "Boutique", "mobile": "9855791111", "address": "Backside Maharaja Palace, Near YPS School, Patiala" },
     { "id": 64, "name": "Satnam Singh Aulakh","img":"Satnam-Singh-Aulakh.webp",  "business": "POLYMATH AGRO SOLUTIONS", "category": "Food Processing", "mobile": "8360021419", "address": "53-B, St. No. 4, Virk Colony, Patiala" },
-    { "id": 63, "name": "Manu Seth","img":"Manu-Seth.webp",  "business": "PRODSOL BIOTECH", "category": "Cosmetics", "mobile": "9459101919", "address": "C-163, Focal Point, Patiala" },
+    { "id": 63, "name": "Manu Seth","img":"Manu-Seth.webp",  "business": "PRODSOL BIOTECH", "category": "Cosmetics", "mobile": "9459101919", "address": "C-163, Focal Point, Patiala"," Presentations":"https://www.youtube.com/embed/J-xrMCtDCgU" },
     { "id": 65, "name": "Parveen Mehta", "img":"Parveen-Mehta.webp",  "business": "NECTAR FOODS", "category": "Corporate Gifting", "mobile": "9814756111", "address": "C-33, Industrial Focal Point, Patiala" }
   ]
