@@ -86,7 +86,11 @@ const Header = ({ category, setCategory, search, setSearch }) => {
   return (
     <>
       {/* Top Banner Row */}
-      <div className="bg-gray-900 text-white text-xs py-1 px-4 text-center font-medium tracking-wide">
+
+
+      {/* Main Sticky Header */}
+      <header className=" sticky top-0 z-50">
+              <div className="bg-gray-900 text-white text-xs py-1 px-4 text-center font-medium tracking-wide">
         Made by{" "}
         <a 
           href="https://digitalpaaji.com" 
@@ -102,21 +106,21 @@ const Header = ({ category, setCategory, search, setSearch }) => {
         </span>
       </div>
 
-      {/* Main Sticky Header */}
-      <header className="pt-4 pb-2 border-b border-gray-200 bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-        
+      <div className="pt-4 pb-2  bg-white/90 backdrop-blur-md  shadow-sm">
+
+     
         {/* Top Row: Logo, Title, and Search */}
         <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 gap-4">
           
           {/* Logo & Title */}
-          <div className={`items-start gap-3 transition-opacity duration-300 ${showsearch ? 'hidden sm:flex opacity-50' : 'flex opacity-100'}`}>
+          <div className={`items-start gap-1.5 transition-opacity duration-300 ${showsearch ? 'hidden sm:flex opacity-50' : 'flex opacity-100'}`}>
             <div>
-                <img src="/logo.webp" alt="Logo" className="h-7 lg:h-10 object-contain cursor-pointer drop-shadow-sm" />
-              <h1 className="font-semibold text-center leading-tight text-gray-900 tracking-tight">PATIALA</h1>
+                <img src="/logo.webp" alt="Logo" className="h-7.5 object-contain cursor-pointer drop-shadow-sm" />
+              <h1 className="font-semibold text-center  text-gray-900 tracking-wider">PATIALA</h1>
         
               </div>
                 <div className="cursor-pointer">
-              <h1 className="font-extrabold text-2xl border-l-2 pl-2 leading-tight text-gray-900 tracking-tight ">DIVINE</h1>
+              <h1 className="font-extrabold text-2xl border-l-2 pl-1 leading-tight text-gray-900 tracking-tight ">DIVINE</h1>
               {/* <p className="text-xs font-medium text-gray-500">Patiala Chapter</p> */}
             </div>
           </div>
@@ -209,6 +213,7 @@ const Header = ({ category, setCategory, search, setSearch }) => {
           </button>
 
         </div>
+         </div>
       </header>
     </>
   );
