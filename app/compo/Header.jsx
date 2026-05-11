@@ -12,7 +12,7 @@ const filterData = [
   { id: 9, category: "Digital Marketing" },
   { id: 10, category: "Insurance" },
   { id: 11, category: "Financial Services" },
-  { id: 12, category: "Bricks" },
+  // { id: 12, category: "Bricks" },
   { id: 13, category: "PVC Panels" },
   { id: 14, category: "Rice Mill" },
   { id: 15, category: "Taxation" },
@@ -115,12 +115,12 @@ const Header = ({ category, setCategory, search, setSearch }) => {
           {/* Logo & Title */}
           <div className={`items-start gap-1.5 transition-opacity duration-300 ${showsearch ? 'hidden sm:flex opacity-50' : 'flex opacity-100'}`}>
             <div>
-                <img src="/logo.webp" alt="Logo" className="h-7.5 object-contain cursor-pointer drop-shadow-sm" />
-              <h1 className="font-semibold text-center  text-gray-900 tracking-wider">PATIALA</h1>
+                <img src="/logo.webp" alt="Logo" className="h-6 lg:h-6.5 object-contain cursor-pointer drop-shadow-sm" />
+              <h1 className="font-semibold text-center text-sm lg:text-base   text-gray-900 tracking-wider">PATIALA</h1>
         
               </div>
                 <div className="cursor-pointer">
-              <h1 className="font-extrabold text-2xl border-l-2 pl-1 leading-tight text-gray-900 tracking-tight ">DIVINE</h1>
+              <h1 className="font-extrabold text-xl lg:text-2xl border-l-2 pl-1 leading-tight text-gray-900 tracking-tight ">DIVINE</h1>
               {/* <p className="text-xs font-medium text-gray-500">Patiala Chapter</p> */}
             </div>
           </div>
@@ -131,11 +131,12 @@ const Header = ({ category, setCategory, search, setSearch }) => {
               <i className="fa-solid fa-magnifying-glass absolute left-4 text-gray-400"></i>
               <input
                 type="text"
-                autoFocus={showsearch}
+                autoFocus
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full bg-gray-100 border-transparent rounded-full pl-11 pr-4 py-2.5 text-sm sm:text-base outline-none focus:bg-white focus:border-red-500 focus:ring-2 focus:ring-red-200 transition-all text-gray-800 placeholder-gray-500 shadow-inner"
+               className="w-full bg-gray-100 border-transparent rounded-full pl-11 pr-4 py-2.5 text-[16px] outline-none focus:bg-white focus:border-red-500 focus:ring-2 focus:ring-red-200 transition-all text-gray-800 placeholder-gray-500 shadow-inner"
                 placeholder="Search name, business, category..."
+                 
               />
             </div>
           </div>

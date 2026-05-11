@@ -54,7 +54,8 @@ export default function Home() {
         data = data.filter((m) =>
           m.name?.toLowerCase().includes(query) ||
           m.business?.toLowerCase().includes(query) ||
-          m.mobile?.includes(query)
+          m.mobile?.includes(query) ||
+         m.category?.toLowerCase().includes(query)
         );
       }
 
@@ -118,7 +119,7 @@ if(presentations)
         categories={categories}
       />
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-4">
         <div className=" flex flex-col md:flex-row md:items-end justify-between gap-4 ">
           <div className="flex flex-wrap gap-2 ">
             {category !== "All" && (
@@ -135,6 +136,9 @@ if(presentations)
             )}
           </div>
         </div>
+            <h2 className="pb-4 font-bold text-xl md:text-2xl uppercase text-center tracking-wide opacity-55 text-[#CF2030] whitespace-nowrap">
+      Patiala Roaster
+    </h2>
 
         {isLoading ? (
           <div className="flex justify-center py-20">
@@ -174,7 +178,7 @@ if(presentations)
                           {member.name}
                         </h3>
                         <p className="truncate text-sm font-medium text-gray-500">{member.business}</p>
-                        <div onClick={()=>{member?.Presentations && setPresentations(member?.Presentations)  }} className={` font-bold uppercase tracking-widest flex gap-1 mt-2  px-2 py-0.5  items-center text-[10px] cursor-pointer`}>
+                        {/* <div onClick={()=>{member?.Presentations && setPresentations(member?.Presentations)  }} className={` font-bold uppercase tracking-widest flex gap-1 mt-2  px-2 py-0.5  items-center text-[10px] cursor-pointer`}>
                         <span className={`inline-block rounded-md   ${colorStyles.bg} ${colorStyles.text}`}>
                           {member.category}
                         </span>
@@ -183,7 +187,10 @@ if(presentations)
 
                         
                       
-                     }</div>
+                     }</div> */}
+                      <span className={`inline-block rounded-md font-bold uppercase tracking-widest mt-2  px-2 py-0.5   text-[10px]   ${colorStyles.bg} ${colorStyles.text}`}>
+                          {member.category}
+                        </span>
                       
                       </div>
                       {/* Image on the right side */}
@@ -207,21 +214,44 @@ if(presentations)
                         <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
+                        <p className="flex items-center justify-between w-full">
                         <a href={`tel:${member.mobile}`} className="text-sm font-semibold hover:text-blue-600 tracking-tight">
                           +91 {member.mobile}
                         </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Action Section */}
-                  <div className="mt-6 border-t border-gray-100 pt-4 flex items-center justify-between">
-                    <a 
+                                  <a 
                       href={`tel:${member.mobile}`}
                       className="text-xs font-bold text-gray-400 hover:text-blue-600 uppercase tracking-tighter"
                     >
                       Call Now
                     </a>
+                    </p>
+                      </div>
+                    </div>
+                  </div>
+
+
+ 
+<div className="mt-1 space-y-3">
+                      <div className="flex items-center gap-3 text-gray-600">
+                        <i className="fa-solid fa-location-dot"></i>
+                        <span  className="text-sm font-semibold hover:text-blue-600 tracking-tight">
+                        {member.address}
+                        </span>
+                      </div>
+                    </div>
+
+
+
+                  {/* Action Section */}
+                  <div className="mt-6 border-t border-gray-100 pt-4 flex items-center justify-between">
+             {member?.Presentations && (
+  <button
+    onClick={() => setPresentations(member.Presentations)}
+    className="text-xs font-bold text-gray-400 hover:text-blue-600 uppercase tracking-tighter"
+  >
+    View Profile
+  </button>
+)}
                     <a
                       href={`https://wa.me/91${member.mobile}`}
                       target="_blank"
