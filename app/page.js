@@ -85,27 +85,60 @@ export default function Home() {
 //   }, [router]);
 
 
-if(presentations)
-{
-  return(
-<div className="h-screen relative">
+// if(presentations)
+// {
+//   return(
+// <div className="fixed inset-0 z-[999] flex items-center justify-center bg-gradient-to-br from-black/80 via-black/70 to-black/90 backdrop-blur-sm p-4">
 
- <iframe
-                  src={getModalVideoUrl(
-                    presentations
-                  )}
-                  className="absolute inset-0 w-full h-full"
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                />
+//   {/* Close Button */}
+//   <button
+//     onClick={() => setPresentations("")}
+//     className="absolute top-5 right-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition hover:bg-white hover:text-black"
+//   >
+//     <i className="fa-solid fa-xmark text-xl"></i>
+//   </button>
+
+//   {/* Video Popup */}
+//   <div className="relative w-full max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-black shadow-2xl">
+
+//     {/* Top Glow */}
+//     <div className="absolute -top-20 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full bg-red-500/20 blur-3xl"></div>
+
+//     {/* Video */}
+//     <div className="relative aspect-video w-full">
+//       <iframe
+//         src={getModalVideoUrl(presentations)}
+//         className="absolute inset-0 h-full w-full"
+//         allow="autoplay; encrypted-media; picture-in-picture"
+//         allowFullScreen
+//       />
+//     </div>
+
+//     {/* Bottom Bar */}
+//     <div className="flex items-center justify-between border-t border-white/10 bg-black/60 px-5 py-3 backdrop-blur-md">
+//       <div>
+//         <h3 className="text-sm font-semibold text-white sm:text-base">
+//           Business Presentation
+//         </h3>
+//         <p className="text-xs text-gray-400">
+//           Watch company introduction & profile
+//         </p>
+//       </div>
+
+//       <button
+//         onClick={() => setPresentations("")}
+//         className="rounded-full bg-white px-4 py-2 text-xs font-bold text-black transition hover:scale-105"
+//       >
+//         Close
+//       </button>
+//     </div>
+//   </div>
+// </div>
 
 
-</div>
+//   )
 
-
-  )
-
-}
+// }
   return (
     <div className="min-h-screen bg-[#F8FAFC]">
 
@@ -244,14 +277,7 @@ if(presentations)
 
                   {/* Action Section */}
                   <div className="mt-6 border-t border-gray-100 pt-4 flex items-center justify-between">
-             {member?.Presentations && (
-  <button
-    onClick={() => setPresentations(member.Presentations)}
-    className="text-xs font-bold text-gray-400 hover:text-blue-600 uppercase tracking-tighter"
-  >
-    View Profile
-  </button>
-)}
+
                     <a
                       href={`https://wa.me/91${member.mobile}`}
                       target="_blank"
@@ -263,6 +289,14 @@ if(presentations)
                       </svg>
                       WhatsApp
                     </a>
+                                 {member?.Presentations && (
+  <button
+    onClick={() => setPresentations(member.Presentations)}
+    className="text-xs font-bold text-gray-400 hover:text-blue-600 uppercase tracking-tighter"
+  >
+    View Profile
+  </button>
+)}
                   </div>
                 </div>
               );
@@ -270,6 +304,57 @@ if(presentations)
           </div>
         )}
       </main>
+
+      {presentations && (
+  <div className="fixed inset-0 z-[999] flex items-center justify-center bg-gradient-to-br from-black/80 via-black/70 to-black/90 backdrop-blur-sm p-4">
+
+    {/* Close Button */}
+    <button
+      onClick={() => setPresentations("")}
+      className="absolute top-5 right-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition hover:bg-white hover:text-black"
+    >
+      <i className="fa-solid fa-xmark text-xl"></i>
+    </button>
+
+    {/* Video Popup */}
+    <div className="relative w-full max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-black shadow-2xl animate-[popup_0.25s_ease]">
+
+      {/* Glow */}
+      <div className="absolute -top-20 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full bg-red-500/20 blur-3xl"></div>
+
+      {/* Video */}
+      <div className="relative aspect-video w-full">
+        <iframe
+          src={getModalVideoUrl(presentations)}
+          className="absolute inset-0 h-full w-full"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+
+      {/* Footer */}
+      <div className="flex items-center justify-between border-t border-white/10 bg-black/60 px-5 py-3 backdrop-blur-md">
+        <div>
+          <h3 className="text-sm font-semibold text-white sm:text-base">
+            Business Presentation
+          </h3>
+
+          <p className="text-xs text-gray-400">
+            Watch company introduction & profile
+          </p>
+        </div>
+
+        <button
+          onClick={() => setPresentations("")}
+          className="rounded-full bg-white px-4 py-2 text-xs font-bold text-black transition hover:scale-105"
+        >
+          Close
+        </button>
+      </div>
     </div>
+  </div>
+)}
+    </div>
+    
   );
 }
