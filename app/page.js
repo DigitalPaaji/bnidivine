@@ -170,7 +170,7 @@ export default function Home() {
           </div>
         </div>
             <h2 className="pb-4 font-bold text-xl md:text-2xl uppercase text-center tracking-wide opacity-55 text-[#CF2030] whitespace-nowrap">
-      Patiala Roaster
+       BNI DIVINE ROSTER
     </h2>
 
         {isLoading ? (
