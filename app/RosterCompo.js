@@ -27,7 +27,7 @@ const getMemberColor = (name = "User") => {
   return colors[charCodeSum % colors.length];
 };
 
-export default function Home() {
+export default function RosterCompo() {
   const [category, setCategory] = useState("All");
   const [filteredMembers, setFilteredMembers] = useState(MembersData);
   const [search, setSearch] = useState("");
