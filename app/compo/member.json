@@ -57,5 +57,69 @@
     { "id": 62, "name": "Harminder Singh Chugh","img":"Harminder-Singh-Chugh.webp",  "business": "ME AND MOMS", "category": "Boutique", "mobile": "9855791111", "address": "Backside Maharaja Palace, Near YPS School, Patiala" },
     { "id": 64, "name": "Satnam Singh Aulakh","img":"Satnam-Singh-Aulakh.webp",  "business": "POLYMATH AGRO SOLUTIONS", "category": "Food Processing", "mobile": "8360021419", "address": "53-B, St. No. 4, Virk Colony, Patiala" },
     { "id": 63, "name": "Manu Seth","img":"Manu-Seth.webp",  "business": "PRODSOL BIOTECH", "category": "Cosmetics", "mobile": "9459101919", "address": "C-163, Focal Point, Patiala","Presentations":"https://www.youtube.com/embed/J-xrMCtDCgU" },
-    { "id": 65, "name": "Parveen Mehta", "img":"Parveen-Mehta.webp",  "business": "NECTAR FOODS", "category": "Corporate Gifting", "mobile": "9814756111", "address": "C-33, Industrial Focal Point, Patiala" }
+    { "id": 65, "name": "Parveen Mehta", "img":"Parveen-Mehta.webp",  "business": "NECTAR FOODS", "category": "Corporate Gifting", "mobile": "9814756111", "address": "C-33, Industrial Focal Point, Patiala" },
+    {
+  "id": 66,
+  "name": "Mandeep S. Sandhu",
+  "img": "Mandeep-S-Sandhu.webp",
+  "business": "SANDHU CARS & FINANCIAL SERVICES",
+  "category": "New & Pre-Owned Cars and Financial Services",
+  "mobile": "8566000075, 9256700075",
+  "address": "SCO-158 & 159, Chotti Baradari, Patiala."
+},
+  {
+    "id": 67,
+    "name": "Jatin Garg",
+    "img": "Jatin-Garg.webp",
+    "business": "SHREE GANESH PLYWOOD HOUSE",
+    "category": "Retailer - Plywood",
+    "mobile": "9779799005",
+    "address": "Nabha Gate, Patiala - 147001."
+  },
+  {
+  "id": 68,
+  "name": "Munish Batheja",
+  "img": "Munish-Batheja.webp",
+  "business": "SAI INTERIOR DECORATORS",
+  "category": "Interior Decorator & Furnishing Materials",
+  "mobile": "9855872283, 9914923123, 9814413230",
+  "address": "Shop No. 1, 2 & 3, Nabha Gate, Lower Mall, Patiala."
+},
+  {
+    "id": 69,
+    "name": "Harmesh Kumar",
+    "img": "Harmesh-Kumar.webp",
+    "business": "GURU KIRPA GLASS HOUSE",
+    "category": "Glass Work - Beveling, Etching & Toughened Glass",
+    "mobile": "8591655501, 9876702756",
+    "address": "Bajwa Colony, Opp. Badi Nadi, Patiala."
+  },
+
+  {
+  "id": 70,
+  "name": "Ravinder Singh",
+  "img": "Ravinder-Singh.webp",
+  "business": "FRIENDS TRAVEL",
+  "category": "Travel Agency & Visa Consultancy",
+  "mobile": "9814305575",
+  "address": "SCO 32, B.N. Khalsa School Complex, Sirhind Road, Patiala."
+},
+{
+  "id": 71,
+  "name": "Rajiv Garg",
+  "img": "Rajiv-Garg.webp",
+  "business": "SHUBH ENTERPRISES",
+  "category": "Manufacturer - Planters & Gardening Products",
+  "mobile": "9814221219",
+  "address": "B-17, Focal Point, Patiala, Punjab."
+},
+{
+  "id": 72,
+  "name": "Lovish Goel",
+  "img": "Lovish-Goel.webp",
+  "business": "LOVISH GOEL & ASSOCIATES",
+  "category": "Chartered Accountant",
+  "mobile": "9814607548, 01757964010",
+  "address": "SCO 132, New Leela Bhawan, Patiala; Goel Paints & H/W Store, Gurbax Colony, Patiala."
+}
   ]

@@ -53,133 +53,116 @@ const FounderLT = () => {
   };
 
   return (
-    <section className="bg-[#f8f6f1] px-5 py-20 lg:py-28">
+    <section className="bg-[#f8f6f1] px-5 py-24 lg:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl">
-        {/* Heading */}
-           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:gap-8">
-  {/* Left Side: Titles */}
-  <div className="max-w-lg">
-    <p className="gsap-header text-xs font-bold uppercase tracking-[0.3em] text-[#b08b4f]">
-      Leadership
-    </p>
+        {/* Header matching the reference style */}
+        <div className="text-center mb-20">
+          <h2 className="text-3xl tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl font-serif">
+            Founder LT Team
+          </h2>
+          <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-[#8c7a6b]" />
+        </div>
 
-    <h2 className="gsap-header mt-2 text-2xl font-black text-neutral-900 sm:text-3xl lg:text-4xl">
-      Founder LT Team
-    </h2>
-  </div>
-
-  
-</div>
-
-        {/* Cards */}
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {data.map((member) => {
+        {/* Staggered Grid Layout matching the reference image */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-32 lg:gap-y-16 items-start">
+          {data.map((member, index) => {
             const isFlipped = flippedCard === member.id;
+            // Apply vertical offset on even/odd indices for larger screens to replicate the staggered layout
+            const staggeredClass = index % 2 === 1 ? "lg:mt-16" : "lg:mt-0";
 
             return (
-              <button
-                key={member.id}
-                type="button"
-                onClick={() => handleFlip(member.id)}
-                aria-label={`View details for ${member.name}`}
-                aria-pressed={isFlipped}
-                className="group h-[430px] w-full cursor-pointer text-left [perspective:1200px]"
-              >
-                <div
-                  className={`relative h-full w-full rounded-[28px] transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] ${
-                    isFlipped ? "[transform:rotateY(180deg)]" : ""
-                  }`}
+              <div key={member.id} className={staggeredClass}>
+                <button
+                  type="button"
+                  onClick={() => handleFlip(member.id)}
+                  aria-label={`View details for ${member.name}`}
+                  aria-pressed={isFlipped}
+                  className="group w-full cursor-pointer text-left [perspective:1200px] focus:outline-none"
                 >
-                  {/* Front side */}
-                  <article className="absolute inset-0 overflow-hidden rounded-[10px] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.12)] [backface-visibility:hidden]">
-                    <img
-                      src={`/Images/${member.img}`}
-                      alt={member.name}
-                      className="h-full w-full  transition-transform duration-700 group-hover:scale-105"
-                    />
-
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-
-                    <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                      <span className="inline-flex rounded-full border border-white/30 bg-white/15 px-3 py-1 text-[11px] font-bold tracking-[0.15em] backdrop-blur-md">
-                        {member.type}
-                      </span>
-
-                      <h3 className="mt-4 text-2xl font-bold leading-tight">
-                        {member.name}
-                      </h3>
-
-                      <p className="mt-2 text-sm text-white/75">
-                        {member.business}
-                      </p>
-
-                      
-                    </div>
-                  </article>
-
-                  {/* Back side */}
-                  <article className="absolute inset-0 flex flex-col rounded-[28px] bg-neutral-950 p-7 text-white shadow-[0_20px_60px_rgba(0,0,0,0.2)] [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                    <div>
-                      <span className="inline-flex rounded-full bg-[red] px-3 py-1 text-[11px] font-bold tracking-[0.15em] text-white">
-                        {member.type}
-                      </span>
-
-                      <h3 className="mt-5 text-2xl font-bold leading-tight">
-                        {member.name}
-                      </h3>
-
-                      <p className="mt-2 text-sm font-semibold text-[red]">
-                        {member.business}
-                      </p>
-                    </div>
-
-                    <div className="mt-8 space-y-5">
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">
-                          Business Category
-                        </p>
-                        <p className="mt-2 text-sm leading-6 text-white/90">
-                          {member.category}
-                        </p>
+                  <div
+                    className={`relative w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] ${
+                      isFlipped ? "[transform:rotateY(180deg)]" : ""
+                    }`}
+                  >
+                    {/* Front side */}
+                    <div className="absolute inset-0 lg:bg-[#fcfbf9] [backface-visibility:hidden]">
+                      <div className="aspect-square lg:aspect-[3/4] w-full overflow-hidden lg:bg-neutral-200 lg:*:shadow-lg">
+                        <img
+                          src={`/Images/${member.img}`}
+                          alt={member.name}
+                          className="h-full w-full object-contain lg:object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        />
                       </div>
-
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">
-                          Mobile
+                      <div className="mt-6 text-center">
+                        <h3 className="text-xl font-bold text-neutral-900 font-serif">
+                          {member.name}
+                        </h3>
+                        <p className="mt-1 text-xs font-bold uppercase tracking-[0.2em] text-neutral-500">
+                          {member.type}
                         </p>
-
-                        <a
-                          href={`tel:${member.mobile}`}
-                          onClick={(event) => event.stopPropagation()}
-                          className="mt-2 inline-block text-sm font-semibold text-white transition hover:text-[#d4b77f]"
-                        >
-                          +91 {member.mobile}
-                        </a>
-                      </div>
-
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">
-                          Address
-                        </p>
-
-                        <p className="mt-2 text-sm leading-6 text-white/75">
-                          {member.address}
-                        </p>
+                        <div className="mx-auto mt-3 h-0.5 w-12 bg-neutral-300 transition-all duration-300 group-hover:w-20 group-hover:bg-[#0ea5e9]" />
                       </div>
                     </div>
 
-                    <div className="mt-auto flex items-center justify-between border-t border-white/10 pt-5">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-white/45">
-                        Click to return
-                      </span>
+                    {/* Back side */}
+                    <div className="relative flex flex-col aspect-square lg:aspect-[3/4] rounded-2xl bg-neutral-950 p-6 text-white shadow-2xl [backface-visibility:hidden] [transform:rotateY(180deg)] justify-between">
+                      <div>
+                        <span className="inline-block rounded-full bg-[#0ea5e9] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
+                          {member.type}
+                        </span>
 
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-lg text-black">
-                        ↻
-                      </span>
+                        <h3 className="mt-4 text-xl font-bold font-serif leading-snug">
+                          {member.name}
+                        </h3>
+
+                        <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-[#0ea5e9]">
+                          {member.business}
+                        </p>
+                      </div>
+
+                      <div className="space-y-4 my-auto text-xs">
+                        <div>
+                          <p className="font-bold uppercase tracking-[0.15em] text-white/40">
+                            Category
+                          </p>
+                          <p className="mt-1 text-white/90 font-medium">
+                            {member.category}
+                          </p>
+                        </div>
+
+                        <div>
+                          <p className="font-bold uppercase tracking-[0.15em] text-white/40">
+                            Mobile
+                          </p>
+                          <a
+                            href={`tel:${member.mobile}`}
+                            onClick={(e) => e.stopPropagation()}
+                            className="mt-1 inline-block font-semibold text-white hover:text-[#0ea5e9] transition"
+                          >
+                            +91 {member.mobile}
+                          </a>
+                        </div>
+
+                        <div>
+                          <p className="font-bold uppercase tracking-[0.15em] text-white/40">
+                            Address
+                          </p>
+                          <p className="mt-1 text-white/75 leading-relaxed">
+                            {member.address}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center justify-between border-t border-white/10 pt-4 text-[10px] uppercase tracking-widest text-white/40">
+                        <span>Click to flip</span>
+                        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-black text-sm">
+                          ↻
+                        </span>
+                      </div>
                     </div>
-                  </article>
-                </div>
-              </button>
+                  </div>
+                </button>
+              </div>
             );
           })}
         </div>

@@ -5,6 +5,7 @@ import FounderLT from './compo/FounderLT'
 import CurrentLt from './compo/CurrentLt'
 import Directors from './compo/Directors'
 import RosterCompo from './RosterCompo'
+import Supporters from './compo/Supporters'
 
 const page = () => {
 
@@ -18,6 +19,7 @@ const page = () => {
     <div>
       <Banner />
 <Directors />
+<Supporters/>
      <FounderLT />
      <CurrentLt />
 <RosterCompo />

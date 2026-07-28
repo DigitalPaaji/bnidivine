@@ -90,22 +90,8 @@ const Header = ({ category, setCategory, search, setSearch }) => {
 
 
       {/* Main Sticky Header */}
-      <header className=" sticky top-0 z-50">
-              <div className="bg-gray-900 text-white text-xs py-1 px-4 text-center font-medium tracking-wide">
-        Made by{" "}
-        <a 
-          href="https://digitalpaaji.com" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="text-red-400 hover:text-red-300 underline underline-offset-2 transition-colors"
-        >
-          Digital Paaji
-        </a>{" "}
-        <span className=" ">·</span>{" "}
-        <span className="text-gray-300">
-          Digital Marketing Agency
-        </span>
-      </div>
+      <header className=" sticky top-6 z-50">
+  
 
       <div className="pt-4 pb-2  bg-white/90 backdrop-blur-md  shadow-sm">
 
