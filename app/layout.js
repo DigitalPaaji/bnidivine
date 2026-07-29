@@ -28,12 +28,12 @@ export default function RootLayout({ children }) {
 
       <body>
                     <div className=" sticky top-0 z-50 bg-gray-800 text-white text-xs py-1 px-4 text-center font-medium tracking-wide">
-        Made by{" "}
+        Developed by{" "}
         <a 
           href="https://digitalpaaji.com" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="text-red-400 hover:text-red-300 underline underline-offset-2 transition-colors"
+          className="text-[#fac928] hover:text-red-300 underline underline-offset-2 transition-colors"
         >
           Digital Paaji
         </a>{" "}

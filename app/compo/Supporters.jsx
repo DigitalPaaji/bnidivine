@@ -43,13 +43,14 @@ const Supporters = () => {
       <div className="mx-auto max-w-6xl relative z-10">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center mb-20">
-          <div className="mx-auto h-1 w-14 rounded-full bg-[#8c7a6b] mb-4" />
-          <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#8c7a6b]">
-            Our Supporters
-          </p>
+          {/* <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#8c7a6b]">
+            Our Support 
+          </p> */}
           <h2 className="mt-2 text-3xl sm:text-5xl font-serif font-normal text-neutral-900 tracking-tight">
-            Key Chapter Supporters
+            Key Supporter Ambassadors
           </h2>
+          <div className="mx-auto h-1 w-14 rounded-full bg-[#8c7a6b] mt-4" />
+
         </div>
 
         {/* Modern Editorial Non-Box Layout */}
