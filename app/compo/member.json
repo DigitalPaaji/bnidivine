@@ -27,7 +27,6 @@
     { "id": 32, "name": "Manik Gupta", "img" :"Manik-Gupta.webp",  "business": "GUPTA AGRO SERVICE", "category": "Agriculture", "mobile": "8968008111", "address": "Opp. New Grain Market, Malerkotla Road, Nabha" },
     { "id": 29, "name": "Sahil Khanna", "img" :"Sahil-Khanna.webp",  "business": "KHANNA HANDLOOM", "category": "Furnishings", "mobile": "9464100009", "address": "Sher-e-Punjab Market, Patiala" },
     { "id": 30, "name": "Rohit Bansal", "img" :"Rohit-Bansal.webp",  "business": "R1 PROPERTIES", "category": "Real Estate", "mobile": "9814107846", "address": "C-167, Near Toyota Agency, Focal Point, Patiala" },   
-    { "id": 33, "name": "Vivek Verma", "img" :"Vivek-Verma.webp",  "business": "DUNIA DEEKHO", "category": "Travel", "mobile": "8054014009", "address": "1635, St. No. 12, Sanouri Adda, Patiala" },
     { "id": 36, "name": "Acharya Komal Sharma", "img" :"Acharya-Komal-Sharma.webp",  "business": "KRIDHA PANCH TATTVA VASTU", "category": "Vastu", "mobile": "9915525000", "address": "Flat no 210E, 2nd Floor, Gokul Tower, Patiala" },
     { "id": 35, "name": "Deepak Goyal", "img" :"Deepak-Goyal.webp",  "business": "GOYAL FIBER GLASS", "category": "Fiber", "mobile": "9815757310", "address": "D-120, Focal Point, Patiala" },    
     { "id": 37, "name": "Ashwani Gupta", "img" :"Ashwani-Gupta.webp",  "business": "GUPTA BATH STUDIO", "category": "Sanitary", "mobile": "9815938416", "address": "D-55, Focal Point, Patiala" },
