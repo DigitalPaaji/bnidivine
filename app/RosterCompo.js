@@ -75,16 +75,21 @@ export default function RosterCompo() {
               const initials = member.name?.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
 
               return (
-                <div key={member.id} className="group relative flex flex-col justify-between rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-md">
+                <div key={member.id} className="group relative flex flex-col justify-between rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:shadow-md">
                   
-                  {/* Badge Logic */}
-                  {member.badge && member.badge.length > 0 && (
-                    <div className="absolute -top-8 -right-6 z-10 flex flex-col gap-1">
-                      {member.badge.includes("Gold") && <img src="/Other/gold.webp" alt="Gold" className="w-20 h-20 object-contain" />}
-                      {member.badge.includes("Green") && <img src="/Other/green.webp" alt="Green" className="w-20 h-20 object-contain" />}
-                    </div>
-                  )}
+             
 
+                    {member.badge && member.badge.length > 0 && (
+                      <div className="absolute -top-5 -left-4 z-10 flex flex-row gap-">
+                       {member.badge.includes("Crorepati") && (
+                          <img
+                            src="/Other/crorepati.webp"
+                            alt="Crorepati"
+                            className="w-16 h-16 object-contain"
+                          />
+                        )}
+                        </div>
+                    )}
                   <div>
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1 overflow-hidden">
@@ -108,6 +113,30 @@ export default function RosterCompo() {
                     <a href={`https://wa.me/91${member.mobile}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-emerald-100 bg-emerald-50/50 px-4 py-2 text-sm font-bold text-emerald-700 transition hover:bg-emerald-600 hover:text-white">
                       WhatsApp
                     </a>
+                  
+                  
+                  
+                       {member.badge && member.badge.length > 0 && (
+                      <div className=" flex flex-row">
+                        {member.badge.includes("Gold") && (
+                          <img
+                            src="/Other/gold.webp"
+                            alt="Gold"
+                            className="w-20 h-20 object-contain"
+                          />
+                        )}
+
+                        {member.badge.includes("Green") && (
+                          <img
+                            src="/Other/green.webp"
+                            alt="Green"
+                            className="w-20 h-20 object-contain"
+                          />
+                        )}
+
+                       
+                      </div>
+                    )}
                     {member?.Presentations && (
                       <button onClick={() => setPresentations(member.Presentations)} className="text-xs font-bold text-gray-400 hover:text-blue-600 uppercase tracking-tighter">
                         View Profile
