@@ -4,47 +4,93 @@ import React, { useState } from "react";
 
 const data = [
   {
-    id: 5,
-    name: "Ar. Rakesh Arora",
-    img: "Ar-Rakesh-Arora.webp",
-    business: "SPACE ART DESIGN STUDIO",
-    category: "Architectural Services",
-    mobile: "9814460603",
-    address: "SCO 2, Upper Mall Road, New Lal Bagh, Patiala",
+    id: 63,
+    name: "Manu Seth",
+    img: "Manu-Seth.webp",
+    business: "PRODSOL BIOTECH",
+    category: "Cosmetics",
+    mobile: "9459101919",
+    address: "C-163, Focal Point, Patiala",
+    Presentations: "https://www.youtube.com/embed/J-xrMCtDCgU",
     type: "PRESIDENT",
   },
   {
-    id: 23,
-    name: "Manpreet Singh Birdi",
-    img: "Manpreet-Singh-Birdi.webp",
-    business: "MARSHALL AIR CONDITIONERS",
-    category: "HVAC",
-    mobile: "9814110036",
-    address: "Shop No. 2217/3, Ghass Mandi, Ragho Majra, Patiala",
+    id: 61,
+    name: "Samir Pandhi",
+    img: "Samir-Pandhi.webp",
+    business: "SPRINGLES EDUTECH",
+    category: "Education",
+    mobile: "9356664999",
+    address: "10-A, Model Town, Patiala",
     type: "VICE PRESIDENT",
   },
   {
-    id: 9,
-    name: "Rishi Raj Singh",
-    img: "Rishi-Raj-Singh.webp",
-    business: "DIGITAL PAAJI",
-    category: "Digital Marketing",
-    mobile: "9888401666",
-    address: "78, Kissan Market, 2nd Floor, Sirhind Road, Nr Hemkunt Petrol Pump, Patiala",
-    Presentations: "https://www.youtube.com/embed/sQB8aZIg2_k",
+    id: 49,
+    name: "Taranjot Singh",
+    img: "Taranjot-Singh.webp",
+    business: "TJ BUILDERS",
+    category: "Builder",
+    mobile: "9872272289",
+    address: "Guru Nanak Di Ha, Bhadson Road, Opp. BD Mall, Patiala",
+    badge: ["Green"],
     type: "SECRETARY",
   },
   {
-    id: 16,
-    name: "Bharat Bhushan",
-    img: "Bharat-Bhushan.webp",
-    business: "JN SURGICALS",
-    category: "Medical Supplies",
-    mobile: "7888306597",
-    address: "Shop no 3, GTB Market, Near TB Hospital, Patiala",
+    id: 26,
+    name: "Ishan Goyal",
+    img: "Ishan-Goyal.webp",
+    business: "PATIALA GLASS & CROCKERY",
+    category: "Crockery",
+    mobile: "9646013430",
+    address: "Puri Road, Arya Samaj, Patiala",
+    badge: [""],
     type: "TREASURER",
   },
 ];
+
+// const data = [
+//   {
+//     id: 5,
+//     name: "Ar. Rakesh Arora",
+//     img: "Ar-Rakesh-Arora.webp",
+//     business: "SPACE ART DESIGN STUDIO",
+//     category: "Architectural Services",
+//     mobile: "9814460603",
+//     address: "SCO 2, Upper Mall Road, New Lal Bagh, Patiala",
+//     type: "PRESIDENT",
+//   },
+//   {
+//     id: 23,
+//     name: "Manpreet Singh Birdi",
+//     img: "Manpreet-Singh-Birdi.webp",
+//     business: "MARSHALL AIR CONDITIONERS",
+//     category: "HVAC",
+//     mobile: "9814110036",
+//     address: "Shop No. 2217/3, Ghass Mandi, Ragho Majra, Patiala",
+//     type: "VICE PRESIDENT",
+//   },
+//   {
+//     id: 9,
+//     name: "Rishi Raj Singh",
+//     img: "Rishi-Raj-Singh.webp",
+//     business: "DIGITAL PAAJI",
+//     category: "Digital Marketing",
+//     mobile: "9888401666",
+//     address: "78, Kissan Market, 2nd Floor, Sirhind Road, Nr Hemkunt Petrol Pump, Patiala",
+//     Presentations: "https://www.youtube.com/embed/sQB8aZIg2_k",
+//     type: "SECRETARY",
+//   },
+//   {
+//     id: 16,
+//     name: "Bharat Bhushan",
+//     img: "Bharat-Bhushan.webp",
+//     business: "JN SURGICALS",
+//     category: "Medical Supplies",
+//     mobile: "7888306597",
+//     address: "Shop no 3, GTB Market, Near TB Hospital, Patiala",
+//     type: "TREASURER",
+//   },
+// ];
 
 const CurrentLt = () => {
   const [flippedCard, setFlippedCard] = useState(null);
@@ -67,7 +113,7 @@ const CurrentLt = () => {
         {/* Header layout matching FounderLT */}
         <div className="text-center mb-20">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#b08b4f] mb-3">
-            (1st April to 31st September, 2026)
+            (1st October 2026 to 31st March 2027 )
           </p>
           <h2 className="text-3xl tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl font-serif">
             Current LT Team
