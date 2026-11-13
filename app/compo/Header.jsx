@@ -65,7 +65,9 @@ const filterData = [
   { id: 61, category: "Boutique" },
   { id: 62, category: "Cosmetics" },
   { id: 63, category: "Food Processing" },
-  { id: 64, category: "Corporate Gifting" }
+  { id: 64, category: "Corporate Gifting" },
+  { id: 65, category: "CCTV" },
+  { id: 65, category: "Marriage Banquet and palace" },
 ];
 
 const Header = ({ category, setCategory, search, setSearch }) => {
