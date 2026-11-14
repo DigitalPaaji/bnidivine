@@ -1,74 +1,74 @@
 'use client';
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
-const filterData = [
-  { id: 1, category: "Retailer - Tiles" },
-  { id: 2, category: "Modular Kitchens" },
-  { id: 3, category: "Interior Designer" },
-  { id: 4, category: "Retailer - Paints" },
-  { id: 5, category: "Architectural Services" },
-  // { id: 6, category: "Retailer - Plywood" },
-  { id: 7, category: "Jewellers" },
-  { id: 8, category: "Furniture" },
-  { id: 9, category: "Digital Marketing" },
-  { id: 10, category: "Insurance" },
-  { id: 11, category: "Financial Services" },
-  // { id: 12, category: "Bricks" },
-  { id: 13, category: "PVC Panels" },
-  { id: 14, category: "Rice Mill" },
-  { id: 15, category: "Taxation" },
-  { id: 16, category: "Medical Supplies" },
-  { id: 17, category: "Dental" },
-  // { id: 18, category: "Catering" },
-  { id: 19, category: "Solar" },
-  { id: 20, category: "Lawyer" },
-  { id: 21, category: "Logistics" },
-  { id: 22, category: "Manufacturing" },
-  { id: 23, category: "HVAC" },
-  { id: 24, category: "CNC Machines" },
-  { id: 25, category: "Event Management" },
-  { id: 26, category: "Crockery" },
-  { id: 27, category: "Electrical Safety" },
-  // { id: 28, category: "Restaurant" },
-  { id: 29, category: "Furnishings" },
-  { id: 30, category: "Real Estate" },
-  { id: 31, category: "Eye Hospital" },
-  { id: 32, category: "Agriculture" },
-  { id: 33, category: "Travel" },
-  // { id: 34, category: "Fitness" },
-  { id: 35, category: "Fiber" },
-  { id: 36, category: "Vastu" },
-  { id: 37, category: "Sanitary" },
-  { id: 38, category: "Building Materials" },
-  { id: 39, category: "Loans" },
-  { id: 40, category: "Electronics" },
-  { id: 41, category: "Fire Safety" },
-  { id: 42, category: "Printing" },
-  { id: 43, category: "Pest Control" },
-  { id: 44, category: "Electrical" },
-  { id: 45, category: "Clothing" },
-  { id: 46, category: "Grocery" },
-  { id: 47, category: "Electricals" },
-  { id: 48, category: "UPVC" },
-  { id: 49, category: "Builder" },
-  // { id: 50, category: "Astrology" },
-  { id: 51, category: "IT Services" },
-  { id: 52, category: "Chemicals" },
-  { id: 53, category: "Opticals" },
-  { id: 54, category: "Photography" },
-  { id: 55, category: "Wellness" },
-  { id: 56, category: "Computers" },
-  { id: 57, category: "Generators" },
-  { id: 58, category: "Sweets" },
-  { id: 59, category: "Homoeopathy" },
-  { id: 60, category: "Education" },
-  { id: 61, category: "Boutique" },
-  { id: 62, category: "Cosmetics" },
-  { id: 63, category: "Food Processing" },
-  { id: 64, category: "Corporate Gifting" }
-];
+// const filterData = [
+//   { id: 1, category: "Retailer - Tiles" },
+//   { id: 2, category: "Modular Kitchens" },
+//   { id: 3, category: "Interior Designer" },
+//   { id: 4, category: "Retailer - Paints" },
+//   { id: 5, category: "Architectural Services" },
+//   // { id: 6, category: "Retailer - Plywood" },
+//   { id: 7, category: "Jewellers" },
+//   { id: 8, category: "Furniture" },
+//   { id: 9, category: "Digital Marketing" },
+//   { id: 10, category: "Insurance" },
+//   { id: 11, category: "Financial Services" },
+//   // { id: 12, category: "Bricks" },
+//   { id: 13, category: "PVC Panels" },
+//   { id: 14, category: "Rice Mill" },
+//   { id: 15, category: "Taxation" },
+//   { id: 16, category: "Medical Supplies" },
+//   { id: 17, category: "Dental" },
+//   // { id: 18, category: "Catering" },
+//   { id: 19, category: "Solar" },
+//   { id: 20, category: "Lawyer" },
+//   { id: 21, category: "Logistics" },
+//   { id: 22, category: "Manufacturing" },
+//   { id: 23, category: "HVAC" },
+//   { id: 24, category: "CNC Machines" },
+//   { id: 25, category: "Event Management" },
+//   { id: 26, category: "Crockery" },
+//   { id: 27, category: "Electrical Safety" },
+//   // { id: 28, category: "Restaurant" },
+//   { id: 29, category: "Furnishings" },
+//   { id: 30, category: "Real Estate" },
+//   { id: 31, category: "Eye Hospital" },
+//   { id: 32, category: "Agriculture" },
+//   { id: 33, category: "Travel" },
+//   // { id: 34, category: "Fitness" },
+//   { id: 35, category: "Fiber" },
+//   { id: 36, category: "Vastu" },
+//   { id: 37, category: "Sanitary" },
+//   { id: 38, category: "Building Materials" },
+//   { id: 39, category: "Loans" },
+//   { id: 40, category: "Electronics" },
+//   { id: 41, category: "Fire Safety" },
+//   { id: 42, category: "Printing" },
+//   { id: 43, category: "Pest Control" },
+//   { id: 44, category: "Electrical" },
+//   { id: 45, category: "Clothing" },
+//   { id: 46, category: "Grocery" },
+//   { id: 47, category: "Electricals" },
+//   { id: 48, category: "UPVC" },
+//   { id: 49, category: "Builder" },
+//   // { id: 50, category: "Astrology" },
+//   { id: 51, category: "IT Services" },
+//   { id: 52, category: "Chemicals" },
+//   { id: 53, category: "Opticals" },
+//   { id: 54, category: "Photography" },
+//   { id: 55, category: "Wellness" },
+//   { id: 56, category: "Computers" },
+//   { id: 57, category: "Generators" },
+//   { id: 58, category: "Sweets" },
+//   { id: 59, category: "Homoeopathy" },
+//   { id: 60, category: "Education" },
+//   { id: 61, category: "Boutique" },
+//   { id: 62, category: "Cosmetics" },
+//   { id: 63, category: "Food Processing" },
+//   { id: 64, category: "Corporate Gifting" }
+// ];
 
-const Header = ({ category, setCategory, search, setSearch }) => {
+const Header = ({ category, setCategory, search, setSearch, categories = [] }) => {
   const [showsearch, setShowSearch] = useState(false);
   const scrollContainerRef = useRef(null);
   const inputRef = useRef(null);
@@ -130,19 +130,19 @@ const Header = ({ category, setCategory, search, setSearch }) => {
 
           {/* Search Toggle Icon */}
           <button
-onClick={() => {
-  if (showsearch) {
-    setSearch("");
-    setShowSearch(false);
-  } else {
-    setShowSearch(true);
+            onClick={() => {
+              if (showsearch) {
+                setSearch("");
+                setShowSearch(false);
+              } else {
+                setShowSearch(true);
 
-    setTimeout(() => {
-      inputRef.current?.focus();
-    }, 100);
-  }
-}}
-// onClick={() => {
+                setTimeout(() => {
+                  inputRef.current?.focus();
+                }, 100);
+              }
+            }}
+            // onClick={() => {
             //   if (showsearch) setSearch(""); 
             //   setShowSearch((prev) => !prev);
             // }}
@@ -186,19 +186,19 @@ onClick={() => {
             </button>
 
             {/* Dynamic Category Buttons */}
-            {[...filterData]
-              .sort((a, b) => a.category.localeCompare(b.category))
-              .map((item) => (
+            {[...categories]
+              .sort((a, b) => a.localeCompare(b))
+              .map((cat, item) => (
                 <button
-                  key={item.id}
-                  onClick={() => setCategory(item.category)}
+                  key={cat}
+                  onClick={() => setCategory(cat)}
                   className={`cursor-pointer whitespace-nowrap text-sm font-semibold rounded-full px-5 py-2 transition-all duration-200 ${
-                    category === item.category
+                    category === cat
                       ? "bg-red-600 text-white shadow-md shadow-red-600/30"
                       : "bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-600 border border-transparent"
                   }`}
                 >
-                  {item.category}
+                  {cat}
                 </button>
             ))}
           </nav>
