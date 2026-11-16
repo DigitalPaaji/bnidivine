@@ -89,36 +89,55 @@ export default function MembersAdmin({ mode = "list", section = "all" }) {
   const [activeTab, setActiveTab] = useState("All Members");
   const [previewUrl, setPreviewUrl] = useState("");
 
-  const token =
-    typeof window !== "undefined"
-      ? localStorage.getItem("bni_admin_token")
-      : null;
+const [token, setToken] = useState(null);
 
-  const authHeaders = {
-    Authorization: `Bearer ${token}`,
-  };
+const authHeaders = {
+  Authorization: `Bearer ${token}`,
+};
 
-  const fetchMembers = async () => {
-    try {
-      setLoading(true);
+const redirectToAuth = () => {
+  localStorage.removeItem("bni_admin_token");
+  setToken(null);
+  router.replace("/admin");
+};
 
-      const response = await fetch(`${API_ENDPOINT}/members/admin/all`, {
-        headers: authHeaders,
-        cache: "no-store",
-      });
+const handleLogout = () => {
+  redirectToAuth();
+};
 
-      if (!response.ok) {
-        throw new Error("Unable to fetch members. Please log in again.");
-      }
+const fetchMembers = async (authToken = token) => {
+  if (!authToken) {
+    redirectToAuth();
+    return;
+  }
 
-      const result = await response.json();
-      setMembers(result.data || []);
-    } catch (error) {
-      setMessage(error.message);
-    } finally {
-      setLoading(false);
+  try {
+    setLoading(true);
+
+    const response = await fetch(`${API_ENDPOINT}/members/admin/all`, {
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+      },
+      cache: "no-store",
+    });
+
+    if (response.status === 401 || response.status === 403) {
+      redirectToAuth();
+      return;
     }
-  };
+
+    if (!response.ok) {
+      throw new Error("Unable to fetch members.");
+    }
+
+    const result = await response.json();
+    setMembers(result.data || []);
+  } catch (error) {
+    setMessage(error.message);
+  } finally {
+    setLoading(false);
+  }
+};
 
   const handleImageChange = (e) => {
     const file = e.target.files?.[0];
@@ -139,9 +158,17 @@ export default function MembersAdmin({ mode = "list", section = "all" }) {
     uploadImage(file);
   };
 
-  useEffect(() => {
-    fetchMembers();
-  }, []);
+useEffect(() => {
+  const savedToken = localStorage.getItem("bni_admin_token");
+
+  if (!savedToken) {
+    router.replace("/admin");
+    return;
+  }
+
+  setToken(savedToken);
+  fetchMembers(savedToken);
+}, []);
 
   useEffect(() => {
     return () => {
@@ -452,19 +479,27 @@ export default function MembersAdmin({ mode = "list", section = "all" }) {
                 <span className="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-red-500"></span>
               </button>
 
-              <div className="flex items-center gap-3 pl-3 border-l border-slate-200">
-                <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-red-500 to-amber-500 text-white font-bold flex items-center justify-center shadow-md shadow-red-500/20 text-sm">
-                  AD
-                </div>
-                <div className="hidden sm:block text-left">
-                  <p className="text-xs font-bold text-slate-900 leading-tight">
-                    Admin User
-                  </p>
-                  <p className="text-[11px] text-slate-400 font-medium">
-                    BNI Divine Patiala
-                  </p>
-                </div>
-              </div>
+    <div className="flex items-center gap-3 pl-3 border-l border-slate-200">
+  <div className="w-10 h-10 rounded-2xl bg-linear-to-tr from-red-500 to-amber-500 text-white font-bold flex items-center justify-center shadow-md shadow-red-500/20 text-sm">
+    AD
+  </div>
+
+  <div className="hidden sm:block text-left">
+    <p className="text-xs font-bold text-slate-900 leading-tight">
+      Admin User
+    </p>
+    <p className="text-[11px] text-slate-400 font-medium">
+      BNI Divine Patiala
+    </p>
+  </div>
+
+  <button
+    onClick={handleLogout}
+    className="ml-2 px-4 py-2.5 rounded-xl bg-red-50 text-red-600 border border-red-100 text-xs font-bold hover:bg-red-600 hover:text-white transition-all"
+  >
+    Logout
+  </button>
+</div>
             </div>
           </header>
 
